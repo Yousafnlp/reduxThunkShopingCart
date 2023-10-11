@@ -11,10 +11,11 @@ function User() {
     // const [data, setData]=useState([])
   // const [loader,setLoaader]=useState(true);
 
-  let data = useSelector(state => state.cartReducer.products)
-  let loading = useSelector(state => state.cartReducer.loading)
-  let error = useSelector(state => state.cartReducer.error)
+  let rad = useSelector(state => state.cartReducer)
+  // let loading = useSelector(state => state.cartReducer.loading)
+  // let error = useSelector(state => state.cartReducer.error)
 
+  const {products,loading,error}=rad
   let dispatch = useDispatch();
 
   
@@ -24,7 +25,7 @@ function User() {
     //  setLoaader(false);
   // } 
   
-  if(data){
+  if(products){
     toast.success("Products fetched Successfuly")
   }
   
@@ -33,7 +34,7 @@ function User() {
        dispatch(getData(dispatch));
     },[])
 
-    console.log(data, loading, error);
+    // console.log(data, loading, error);
     return(<>
 
   {loading ? (<Loader/>) : error ?  (<h1>error in fetching products</h1>)  :
@@ -41,7 +42,7 @@ function User() {
   (
     <div className="d-flex backg flex-wrap justify-content-center gap-3 pt-5">
   
-    {data.map((item)=>{
+    {products.map((item)=>{
     return(
       <div class="card" style={{width: "18rem"}}>
      <div className="text-center">
