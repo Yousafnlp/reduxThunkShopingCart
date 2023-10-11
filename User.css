@@ -1,0 +1,41 @@
+.backg{
+    background-color: whitesmoke;
+}
+
+.card-title{
+    font-size: 19px;
+}
+
+.card-title-sub{
+    font-size: 16px;
+}
+
+.card-text{
+    color: #000;
+    font-size: 14px;
+}
+
+.card-body{
+    text-align: start;
+}
+
+button.btn.btn-primary.c-btn {
+    font-size: 15px;
+    padding: 2px 10px;
+    border-radius: 10%;
+}
+
+@media only screen and (max-width: 780px) {
+    .myflex {
+        flex-direction: column !important;
+    }
+  }
+
+  
+@media only screen and (max-width: 680px) {
+    .myinput {
+        width: 90% !important;
+    }
+
+
+  }
